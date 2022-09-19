@@ -1,0 +1,27 @@
+# Api
+
+![diagram](https://www.plantuml.com/plantuml/svg/0/hLPTQniv57qt-3-eGw4Eh3EKRbyAWRgsDmqaSOYTbZu5pUZQLgAHff8c9Ypxt_TA6erdF4wRXSrBDD8vzzplvBEnLDkg4AGoeCUvAaebGThXm78hWDpXBPagQRKIfFNwXijSL0p8rjhIV4fJJNUd6swtLUOCvSX0t2aoqb9GwHJ6nZB1itJwv_Z6NTrTNQO5DHOqNjrFe-tJ4h730KemM7C9P3R_TZ5TN2zV8MMhaZBzOI_9yNMyHiJOb9fRC56HmPDxCtkPlnRNgydt-N9nDVzVbVmTtO5H1Om_jZ8NuqeVw1Eje-u_bihOZGRpKnn2MWwdpZtJPEvoycDnjxh_Vh7wUdyvFvzVpqOdxlu6GKgEL0cQMgN_8CcYFf9fPImwg1Eyd13pZAuN90B93dFW6uHmkLQwe9OhUOhOjo7OiyGxa7WLroqKCwhllwXACggVH_bxP_RcejjEax8KFFUsd2d1vUDP4bCVqlwx1afEoD_30S6Vfdz6pfLQGe0BiYqgGeYtO6ptwYq3a-kpP2A4sXaolRsRrV6ZUpwolieID7OHH8dwqzdV7wFTBvN1d1X3T2N042ePCG7qWl5RmD9ppFvpjB-_2I6qlgAAnw7NXcC1PGv4xr4z5QkKC6XfvNudhKEqTWvOHIg81_RvsF5hla7Ur1-IvbJ5hFLD6R2MoyqHQuLYuDsvyeSadiXSuYhYqBRchvxHBr8FRpjabzg2IbvMWbe8RSkefNr9PfKJdAqMJcs66BBIL9erCXRP0-JsgARAN7__1nspevkDRyLbE2NrECnKNXM8Q6QWrbfkrOuu04XMAYujOHqaAlpJ6RLPDc9P7KD63OG64HwDMR-fbmY9xsIPRw6WlbMnEV35RaC8xx13OOEv33Li3xoFM8FL79wGmMrd0-mNLLW3mm4wqDerlR6yeezenKMPKo7G0nM8ZdO8Rgqi75rCAuQ0bN0mHpf6QVefru3rIR7pqgfahbJWI_aIiUwAFeq53uznkjj0my_ABHZJR85EO0smbn8TO-imZ_8wwo4AjiRW1UghiX9u4ThpSWCsWXkHDdYVYDyXEq4SWWCyLEEe3wuUBMIzpev2RRtPJdhGhhCjN2sV_IBTVjhn-u5bURipsc0_bcuBkx8U4W8bxj6cDiwJ_72JddJ1-vto6dJTqw-1nhyABs67Wy-ubVn_6ly2)
+
+![diagram](https://www.plantuml.com/plantuml/svg/0/hLJ1Rjf04BqZyGzRgrA9Md1Hsqibf12W3L62KGoDUaABTu1DrxlEpXWKLVttpXfCIAkgFTG7Z6RUlZVpziddID9JcHjH8lXsvYn9RS4t6wJ9W9XpLGouwfsfteVk2sqpKoeG6w82FyQnbxlEMjEcN0QYm0EMEfdBuy986nJQIChePJnutvw6qlpcEiub4dWkBOxSdOAnpGPBA5XnGGn7NyQ3P9B-WnILXLJ-tPEavcvxnOWs5buJOAseO1jw-2JpAPdC-dUZDBaP_LUbgYPtW2w7zeSJv-gzudkvbOUjVsyM3cdj0H_Chv2JWUCm7XwTk-v_JUQpnTruThcu7dqUJOQjir2VCiZPbYl0ItB-ZOYImrynA95uG1zniI_maKVFHGqKE_QW2eZGTkLyBaaxss7io_solQWQ8AfKqkhmuiALLad_sCgwWNCwVfwbVb4OdLL4WSTe-wqNrRxlFVzRUg8pyRtP4FmSmzEIXMQrbAUoQt7X7B6G3ai5auEG0inyB-eRutOe1hVpuM5D7WG3WEGQUz6sstdxcd-wOQSVOQsZnd3PKajc74gIIuaGs6_1L0pIYEdXmaJT5scsWJo8HocRoHtQGENcAnGUrXffBtzghf1MSPEyXYsVqFJCxQTGx2rd-PDRtNkGSAOzF9I05AIlqcGINyvcqt0Yu2lKIHHk0Gks00H7NDFZdyzKosj6UehBGac26C50LidSgsLMemDmFuk7p7c5CNzi24vXvs0LN-vF)
+
+**Level 3: Component diagram**
+
+The component diagram shows how a container is made up of a number of "components", what each of those components is, their responsibilities, and the technology/implementation details.
+
+In this diagram, you can visualize the relationship of the various components of the API and their interaction. An operator makes a request to consult, create, delete or update user information. The controller takes the request and forwards it to the service layer. The service is in charge of performing the operation in the database (persistence) or applying some business rule. Subsequently, the information of the operation and the result is returned to the controller, who in turn sends back a response.
+
+**Scope**: A single container.
+
+
+
+**Level 2: Container diagram**
+
+Este diagrama permite visualizar el contenido y arquitectura de la Api en un segundo nivel
+
+The Container diagram shows the high-level shape of the software architecture and how responsibilities are distributed across it. It also shows the best technology choices and how the containers communicate with one another. It's a simple, high-level technology focused diagram that is useful for software developers and support/operations staff alike.
+
+**Scope**: A single API software system.
+
+
+
+

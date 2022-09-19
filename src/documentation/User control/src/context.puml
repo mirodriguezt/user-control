@@ -1,0 +1,13 @@
+@startuml user-context
+title User Control Context
+!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(operator, "Operator Customer", "A system operator with user information.")
+System(api, "Api User Control System", "Allows managing user information (CRUD).")
+
+Rel(operator, api, "Add, modify, delete users. You can also consult the information of these", "JSON/HTTP")
+Rel(api, operator, "Return Response with operation results", "JSON/HTTP")
+
+@enduml

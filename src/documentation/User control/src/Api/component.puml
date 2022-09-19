@@ -1,0 +1,57 @@
+@startuml user-component
+title User Control component
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Component.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/java.puml
+!include DEVICONS/postgresql.puml
+!include FONTAWESOME/users.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(operator, "Operator Customer", "A system operator with user information.", $sprite="users")
+
+Container_Boundary(c1, "API User Control Application", $link="https://github.com/plantuml-stdlib/C4-PlantUML") {
+    Component(userController, "User Controller", "Rest Controller", $descr="Allows CRUD operations")
+    Component(userService, "User Service", "Service", $descr="Business rules and services")
+    Component(userRepository, "User Repository", "Repository", $descr="User persistence repository")
+    Component(tools, "Tools", "Tools", $descr="General tools")
+    Component(config, "Config", "Configurations", $descr="General settings")
+    Component(models, "Models", "Model Entities", $descr="Entity to define persistence and manipulate user data")
+    Component(dtos, "DTO", "Data Transfer Object", $descr="Entity to obtain and manipulate user data")
+    Component(swagger, "Swagger", "API Documentation", $descr="Show API endpoint documentation")
+}
+
+ContainerDb(db, "Database", "Relational Postgres Database Schema", "Stores the user's registration information and retrieves it.", $sprite="postgresql")
+
+
+Rel(operator, userController, "Makes API calls to")
+
+Rel(userController, operator, "Response to user")
+Rel(userController, models, "create/set/update entity")
+Rel(userController, dtos, "create/set/update dto")
+Rel(userController, userService, "request service", )
+
+Rel(userService, userController, "response service", )
+Rel(userService, userRepository, "request persistence", )
+Rel(userService, models, "create/set/update entity")
+
+Rel(models, userController, "get entity", )
+Rel(models, userService, "get entity", )
+Rel(models, userRepository, "get entity", )
+
+Rel(dtos, userController, "get dto", )
+
+Rel(tools, userController, "get tools", )
+Rel(tools, userService, "get tools", )
+
+Rel(db, userRepository, "request data", "jdbc")
+Rel(userRepository, db, "reponse data", "jdbc")
+
+Rel(config, models, "get configurations", )
+Rel(config, swagger, "get configurations", )
+Rel(config, dtos, "get configurations", )
+Rel(config, tools, "get configurations", )
+
+@enduml

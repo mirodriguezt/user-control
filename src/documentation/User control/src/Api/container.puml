@@ -1,0 +1,25 @@
+@startuml user-container
+title User Control Container
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+!define DEVICONS https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/devicons
+!define FONTAWESOME https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/master/font-awesome-5
+!include DEVICONS/java.puml
+!include DEVICONS/postgresql.puml
+!include FONTAWESOME/users.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(operator, "Operator Customer", "A system operator with user information.", $sprite="users")
+
+System_Boundary(c1, "API User Control Application", $link="https://github.com/plantuml-stdlib/C4-PlantUML") {
+    Container(api, "Spring Boot Api", "java", $descr="Allows CRUD operations", $tags="v1.0+v1.1")
+}
+
+ContainerDb(db, "Database", "Relational Postgres Database Schema", "Stores the user's registration information and retrieves it.", $sprite="postgresql")
+
+Rel(operator, api, "One request", "JSON/HTTP")
+Rel(api, operator, "Response entity", "JSON/HTTP")
+Rel(api, db, "insert/update/select", "jdbc")
+Rel(db, api, "records/state", "jdbc")
+@enduml

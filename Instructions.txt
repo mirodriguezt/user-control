@@ -1,0 +1,7 @@
+- Run docker
+- Execute docker-compose up
+- To review swagger access: -> http://localhost.com:8080/swagger-ui.html#/user-controller
+- Import the requests for postman located in /postman
+- Review technical information at: user-control\src\documentation\User control\docs\User control.pdf
+- if you want to see the same documentation in the browser, run: user-control\src\documentation\'User control'>c4builder site
+    and go to http://localhost:3000
